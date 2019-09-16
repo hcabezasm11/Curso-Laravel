@@ -11,13 +11,15 @@
 |
 */
 
+Route::get('/', 'InicioController@index');
+
 // Route::get('/', function () {
 //     return view('welcomess');
 // });
 
 // route::get('permiso/{nombre}/{slug?}','PermisoController@index');
 
-route::get('admin/sistema/permiso','PermisoController@index')->name('permiso');
+// route::get('admin/sistema/permiso','PermisoController@index')->name('permiso');
 
 // Route::get('permiso/{nombre}', function ($nombre) {
 //     return $nombre;
