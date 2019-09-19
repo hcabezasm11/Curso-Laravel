@@ -16,9 +16,16 @@ use App\Http\Controllers\Admin\PermisoController;
 Route::get('/', 'InicioController@index');
 Route::get('admin/permiso', 'Admin\PermisoController@index')->name('permiso');
 Route::get('admin/permiso/crear', 'Admin\PermisoController@crear')->name('crear_permiso');
+/*RUTAS DE MENU*/
 Route::get('admin/menu', 'Admin\MenuController@index')->name('menu');
-Route::get('admin/menu/crear', 'Admin\MenuController@crear')->name('crear_menu');
+Route::post('admin/menu/guardar-orden', 'Admin\MenuController@GuardarOrden')->name('guardar-orden');
+
 Route::post('admin/menu', 'Admin\MenuController@guardar')->name('guardar_menu');
+Route::get('admin/menu/crear', 'Admin\MenuController@crear')->name('crear_menu');
+
+Route::get('admin/menu/editar', 'Admin\MenuController@editar')->name('editar_menu');
+Route::get('admin/menu/eliminar', 'Admin\MenuController@eliminar')->name('eliminar_menu');
+
 
 // Route::group(['prefix' => 'admin','namespace'=> 'Admin'], function () {
 //     Route::get('permiso', 'PermisoController@index')->name('permiso');

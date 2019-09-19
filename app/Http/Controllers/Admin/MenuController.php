@@ -16,7 +16,9 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menus = Menu::getMenu();
+        return view("admin.menu.index",compact('menus'));
+        /*,['menus' => $menus]*/
     }
 
     /**
@@ -49,7 +51,7 @@ class MenuController extends Controller
      */
     public function mostrar($id)
     {
-        //
+       //
     }
 
     /**
@@ -85,5 +87,15 @@ class MenuController extends Controller
     public function eliminar($id)
     {
         //
+    }
+    public function GuardarOrden(Request $request)
+    {
+        if ($request->ajax()) {
+            $menu = new Menu;
+            $menu->guardarOrden($request->menu);
+            return response()->json(['respuesta' => 'ok']);
+        } else {
+            abort(404);
+        }
     }
 }
