@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\models\Admin\Rol;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
@@ -9,6 +10,7 @@ class Menu extends Model
     protected $table = "menu";
     protected $fillable = ['nombre', 'url', 'icono'];
     protected $guarded = ['id'];
+
 
     public function roles()
     {

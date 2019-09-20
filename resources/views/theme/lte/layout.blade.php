@@ -17,6 +17,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/skins/_all-skins.min.css")}}">
+    {{-- Esto espara eliminar un Registro de Una tabla --}}
+    <link rel="stylesheet" href="{{asset("assets/css/toastr.min.css")}}">
 
     @yield("styles")
 
@@ -30,7 +32,7 @@
     <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    {{-- <link rel="stylesheet" href="{{asset("assets/css/familySourceSansPro.css")}}"> --}}
     </head>
     <body class="hold-transition skin-blue layout-boxed sidebar-mini">
         <!-- Site wrapper -->
@@ -64,8 +66,11 @@
     <!-- AdminLTE for demo purposes -->
     {{-- <script src="{{asset("assets/$theme/dist/js/demo.js")}}"></script> --}}
     <script src="{{asset("assets/js/funciones.js")}}"></script>
+    <script src="{{asset("assets/js/scripts.js")}}"></script>
     <script src="{{asset("assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
     <script src="{{asset("assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
+    <script src="{{asset("assets/js/sweetalert.min.js")}}"></script>
+    <script src="{{asset("assets/js/toastr.min.js")}}"></script>
     @yield("scripts")
     @yield("scriptsPlugins")
     </body>

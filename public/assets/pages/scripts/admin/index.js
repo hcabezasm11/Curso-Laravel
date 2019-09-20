@@ -16,7 +16,7 @@ $(document).ready(function () {
             }
         });
     });
-
+/* Funcion para eliminar un rol atraves de ajax*/
     function ajaxRequest(form) {
         $.ajax({
             url: form.attr('action'),
