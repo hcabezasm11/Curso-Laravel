@@ -13,7 +13,7 @@ class InicioController extends Controller
      */
     public function index()
     {
-        // dd(session());
+        //  dd(session()->all()["rol_nombre"]);
          return view("inicio");
     }
 

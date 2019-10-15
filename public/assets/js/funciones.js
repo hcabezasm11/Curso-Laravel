@@ -37,7 +37,6 @@ var Biblioteca = function () {
                 }
             });
         },
-        /* Funcion para eliminar un rol atraves de ajax, pero se puede usar para notificar*/
         notificaciones: function (mensaje, titulo, tipo) {
             toastr.options = {
                 closeButton: true,

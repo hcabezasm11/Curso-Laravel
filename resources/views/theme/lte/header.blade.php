@@ -107,24 +107,24 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="{{asset("assets/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle" alt="User Image">
-
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{session()->get('nombre_usuario') ?? 'Invitado'}} 
+                  <small> 
+                @if (session()->get("rol_id"))
+                    Su ROL activo >>{{session()->all()["rol_nombre"]}}
+                @else
+                    el rol no esta definido
+                @endif</small>
                 </p>
               </li>
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                    @if(session()->get("roles") && count(session()->get("roles")) > 1)
+                    <div class="col-xs-6 text-center">
+                        <a href="#" class="cambiar-rol">Cambiar Rol</a>
+                    </div>
+                    @endif
                 </div>
               </li>
               <!-- Menu Footer-->

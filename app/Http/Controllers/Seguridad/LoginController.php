@@ -19,27 +19,20 @@ class LoginController extends Controller
 
     public function index()
     {
+        //esta es la q carga el formulario para login
         return view('seguridad.index');
     }
 
     protected function authenticated(Request $request, $user)
     {
-        $roles = $user->roles()->where('estado',1)->get();
-        if($roles->isNotEmpty())  {
+        $roles = $user->roles()->get();
+        if ($roles->isNotEmpty()) {
             $user->setSession($roles->toArray());
         } else {
-                $this->guard()->logout();
-                $request->session()->invalidate();
-                return redirect('seguridad/login')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
-            }
-        // $roles = $user->roles()->get();
-        // if ($roles->isNotEmpty()) {
-        //     $user->setSession($roles->toArray());
-        // } else {
-        //     $this->guard()->logout();
-        //     $request->session()->invalidate();
-        //     return redirect('seguridad/login')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
-        // }
+            $this->guard()->logout();
+            $request->session()->invalidate();
+            return redirect('seguridad/login')->withErrors(['error' => 'Este usuario no tiene un rol activo']);
+        }
     }
 
     public function username()
