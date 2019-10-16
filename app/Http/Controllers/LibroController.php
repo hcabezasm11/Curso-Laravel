@@ -38,7 +38,8 @@ class LibroController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function guardar(Request $request)
-    {
+    { 
+        // dd($request->all());
         if ($foto = Libro::setCaratula($request->foto_up))
             $request->request->add(['foto' => $foto]);
         Libro::create($request->all());

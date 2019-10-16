@@ -6,7 +6,6 @@ Libros
 @section("scripts")
 <script src="{{asset("assets/pages/scripts/libro/index.js")}}" type="text/javascript"></script>
 @endsection
-
 @section('contenido')
 <div class="row">
     <div class="col-lg-12">
@@ -31,6 +30,7 @@ Libros
                         </tr>
                     </thead>
                     <tbody>
+                            {{-- {{dd($datas)}} --}}
                         @foreach ($datas as $data)
                         <tr>
                             <td><a href="{{route('ver_libro', $data)}}" class="ver-libro">{{$data->titulo}}</a></td>

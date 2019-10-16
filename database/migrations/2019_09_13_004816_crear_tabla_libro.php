@@ -19,7 +19,7 @@ class CrearTablaLibro extends Migration
             $table->string('isbn',30);
             $table->string('autor',100);
             $table->unsignedBigInteger('cantidad');
-            $table->string('editoria',50)->nullable();
+            $table->string('editorial',50)->nullable();
             $table->string('foto',100)->nullable();
             $table->timestamps();
             $table->charset ='utf8mb4';
